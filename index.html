@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Cards</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, rgb(0, 36, 196) 50%, rgb(212, 212, 232) 50%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px; 
+      margin: 2rem auto;
+      padding-left: 100px;
+      padding-right: 40px;
+    }
+
+    .wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-card {
+      transition: transform 0.3s ease-in-out;
+      padding: 2rem;
+      box-shadow: 0px 6px 6px rgba(23, 1, 1, 0.1);
+      background-color: white;
+      text-align: center;
+      width: 300px;
+      height: 300px;
+      position: relative;
+      margin-bottom: 90px;
+    }
+
+    .icon-wrapper {
+      width: 90px;
+      height: 90px;
+      border: 3px solid black;
+      font-size: 3rem;
+      color: #6366f1;
+      position: absolute;
+      top: 0;
+      left: 44%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .card-content {
+      margin-top: 30px;
+    }
+
+    .explore-link {
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      color: #6366f1;
+    }
+
+    .explore-link i {
+      margin-left: 4px;
+      font-size: 0.75rem;
+    }
+
+    .heading {
+      color: white;
+      text-align: left;
+      margin-bottom: 90px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="assignment">
+  
+  <h1 class="text-4xl font-bold heading">OUR SERVICES</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+    
+    <div class="wrapper">
+      <div class="icon-wrapper">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <div class="service-card" id="box1">
+        <div class="card-content">
+          <h2 class="text-xl font-semibold mb-4">Emergency Plumbing Services</h2>
+          <p class="text-gray-600 mb-6">Our plumbers are ready to go 24/7 for emergencies...</p>
+          <a href="#" class="explore-link">Explore This Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="icon-wrapper">
+        <i class="fas fa-faucet"></i>
+      </div>
+      <div class="service-card" id="box2">
+        <div class="card-content">
+          <h2 class="text-xl font-semibold mb-4">Plumbing and Drains</h2>
+          <p class="text-gray-600 mb-6">As the largest plumbing and drain service company...</p>
+          <a href="#" class="explore-link">Explore This Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="icon-wrapper">
+        <i class="fas fa-tint"></i>
+      </div>
+      <div class="service-card" id="box3">
+        <div class="card-content">
+          <h2 class="text-xl font-semibold mb-4">Water Damage</h2>
+          <p class="text-gray-600 mb-6">Our teams are equipped with state-of-the-art water extraction...</p>
+          <a href="#" class="explore-link">Explore This Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="icon-wrapper">
+        <i class="fas fa-burn"></i>
+      </div>
+      <div class="service-card" id="box4">
+        <div class="card-content">
+          <h2 class="text-xl font-semibold mb-4">Water Heaters</h2>
+          <p class="text-gray-600 mb-6">Trust us for repair and replacement of gas, electric, and tankless water heaters.</p>
+          <a href="#" class="explore-link">Explore This Service <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function applyRotation(boxId) {
+    anime({
+      targets: boxId,
+      rotateY: '1turn',
+      duration: 1000,
+      easing: 'easeInOutSine',
+    });
+  }
+
+  document.querySelectorAll('.service-card').forEach(function(card) {
+    card.addEventListener('mouseenter', function() {
+      applyRotation(this);
+    });
+  });
+</script>
+
+</body>
+</html>
